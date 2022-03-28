@@ -13,6 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TweetSearchDto {
 
-    private List<Data> dataList;
+    private List<Data> data;
     private Meta meta;
 }
