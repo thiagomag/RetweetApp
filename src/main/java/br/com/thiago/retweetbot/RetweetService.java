@@ -29,8 +29,10 @@ public class RetweetService {
         ObjectMapper mapper = new ObjectMapper();
         var userData = mapper.readValue(userResponse, User.class);
         var userId = userData.getData().getId();
-        var signature = "HMAC-SHA1";
+        var signature = "HmacSHA1";
 
-        tweeterClient.retweetById(userId, consumerKey, consumerSecret, accessToken, accessTokenSecret, signature);
+        tweets.getData().forEach(
+                data -> tweeterClient.retweetById(userId, data.getId().toString(), consumerKey, consumerSecret, accessToken, accessTokenSecret)
+        );
     }
 }

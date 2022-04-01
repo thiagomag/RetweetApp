@@ -13,8 +13,8 @@ public class TweetSearchController {
 
     private final TweetSearchService tweetSearchService;
 
-    @GetMapping
-    public ResponseEntity<TweetSearchDto> recentSearch(@RequestBody RequestDto requestDto) throws IOException {
-        return ResponseEntity.ok().body(tweetSearchService.recentSearch(requestDto.query, requestDto.getBearerToken()));
+    @GetMapping("/{query}")
+    public ResponseEntity<TweetSearchDto> recentSearch(@PathVariable String query) throws IOException {
+        return ResponseEntity.ok().body(tweetSearchService.recentSearch(query));
     }
 }

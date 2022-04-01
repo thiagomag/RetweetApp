@@ -4,18 +4,18 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(value = "TweetSearch", url = "https://api.twitter.com/2")
+@FeignClient(value = "TweetSearch", url = "https://api.twitter.com")
 public interface TweeterClient {
 
-    @GetMapping("/tweets/search/recent?query=")
+    @GetMapping("/2/tweets/search/recent?query=")
     ResponseEntity<String> tweetSearch(@RequestParam String query, @RequestHeader("Authorization") String bearerToken);
 
-    @GetMapping("/users/by/username/{userName}")
+    @GetMapping("/2/users/by/username/{userName}")
     ResponseEntity<String> getUserDataByUserName(@PathVariable String userName, @RequestHeader("Authorization") String bearerToken);
 
-    @PostMapping("/users/{id}/retweets")
+    @PostMapping("/2/users/{id}/retweets")
     ResponseEntity<String> retweetById(@PathVariable String id,
-                                       @RequestHeader("Signature Method") String signature,
+                                       @RequestBody String tweetId,
                                        @RequestHeader("Consumer Key") String consumerKey,
                                        @RequestHeader("Consumer Secret") String consumerSecret,
                                        @RequestHeader("Access Token") String accessToken,

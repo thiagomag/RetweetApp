@@ -3,3 +3,4 @@ oauth:
   consumerSecret: ${CONSUMER_SECRET}
   accessToken: ${ACCESS_TOKEN}
   accessTokenSecret: ${ACCESS_TOKEN_SECRET}
+  bearerToken: ${BEARER_TOKEN}
