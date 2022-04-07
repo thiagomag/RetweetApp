@@ -1,5 +1,7 @@
-package br.com.thiago.retweetbot;
+package br.com.thiago.retweetbot.service;
 
+import br.com.thiago.retweetbot.client.TwitterClientV2;
+import br.com.thiago.retweetbot.dto.TweetSearchDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +25,7 @@ public class TweetSearchService {
         ObjectMapper mapper = new ObjectMapper();
         var tweets = mapper.readValue(response, TweetSearchDto.class);
 
-        retweetService.retweet(tweets, bearerToken);
+        retweetService.retweet(tweets);
 
         return tweets;
     }

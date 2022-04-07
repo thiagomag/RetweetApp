@@ -1,4 +1,4 @@
-package br.com.thiago.retweetbot;
+package br.com.thiago.retweetbot.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

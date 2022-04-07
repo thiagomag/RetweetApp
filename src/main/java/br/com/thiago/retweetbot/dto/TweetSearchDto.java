@@ -1,5 +1,7 @@
-package br.com.thiago.retweetbot;
+package br.com.thiago.retweetbot.dto;
 
+import br.com.thiago.retweetbot.entity.Data;
+import br.com.thiago.retweetbot.entity.Meta;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

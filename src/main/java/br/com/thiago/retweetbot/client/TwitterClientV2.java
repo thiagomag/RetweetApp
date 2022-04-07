@@ -1,4 +1,4 @@
-package br.com.thiago.retweetbot;
+package br.com.thiago.retweetbot.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package br.com.thiago.retweetbot;
+package br.com.thiago.retweetbot.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class UserData {
 
-    private UserData data;
+    private String id;
+    private String name;
+    private String username;
 }
