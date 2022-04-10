@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class RetweetBotApplication {
+public class RetweetAppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RetweetBotApplication.class, args);
+        SpringApplication.run(RetweetAppApplication.class, args);
     }
 
 }

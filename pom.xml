@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>br.com.thiago</groupId>
-    <artifactId>RetweetBot</artifactId>
+    <artifactId>RetweetApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>RetweetBot</name>
     <description>RetweetBot</description>
