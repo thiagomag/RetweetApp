@@ -1,8 +1,7 @@
 package br.com.thiago.retweetbot.service;
 
 import br.com.thiago.retweetbot.client.TwitterClientV2;
-import br.com.thiago.retweetbot.dto.TweetSearchDto;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import br.com.thiago.retweetbot.entity.TweetSearchResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,14 +18,12 @@ public class TweetSearchService {
     @Value("${oauth.bearerToken}")
     private String token;
 
-    public TweetSearchDto recentSearch(String query) throws IOException, GeneralSecurityException {
+    public TweetSearchResponse recentSearch(String query) throws IOException, GeneralSecurityException {
         final var bearerToken = "Bearer " + token;
-        var response = twitterClientV2.tweetSearch(query, bearerToken).getBody();
-        ObjectMapper mapper = new ObjectMapper();
-        var tweets = mapper.readValue(response, TweetSearchDto.class);
+        var tweetResponse = twitterClientV2.tweetSearch(query, bearerToken);
 
-        retweetService.retweet(tweets);
+        retweetService.retweet(tweetResponse);
 
-        return tweets;
+        return tweetResponse;
     }
 }

@@ -1,6 +1,6 @@
 package br.com.thiago.retweetbot.controller;
 
-import br.com.thiago.retweetbot.dto.TweetSearchDto;
+import br.com.thiago.retweetbot.entity.TweetSearchResponse;
 import br.com.thiago.retweetbot.service.TweetSearchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ public class TweetSearchController {
     private final TweetSearchService tweetSearchService;
 
     @GetMapping
-    public ResponseEntity<TweetSearchDto> recentSearch(@PathParam("query") String query) throws IOException, GeneralSecurityException {
+    public ResponseEntity<TweetSearchResponse> recentSearch(@PathParam("query") String query) throws IOException, GeneralSecurityException {
         return ResponseEntity.ok().body(tweetSearchService.recentSearch(query));
     }
 }

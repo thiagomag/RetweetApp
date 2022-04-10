@@ -1,6 +1,6 @@
 package br.com.thiago.retweetbot.service;
 
-import br.com.thiago.retweetbot.dto.TweetSearchDto;
+import br.com.thiago.retweetbot.entity.TweetSearchResponse;
 import com.github.redouane59.twitter.TwitterClient;
 import com.github.redouane59.twitter.signature.TwitterCredentials;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class RetweetService {
     private String accessTokenSecret;
 
 
-    public void retweet(TweetSearchDto tweets) {
+    public void retweet(TweetSearchResponse tweets) {
 
         final var credentials = TwitterCredentials.builder()
                 .accessToken(accessToken)
